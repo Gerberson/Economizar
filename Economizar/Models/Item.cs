@@ -20,5 +20,8 @@ namespace Economizar.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataCompra { get { return DateTime.Now; } }
+
+        public virtual Produto Produto { get; set; }
+        public virtual Supermercado Supermercado { get; set; }
     }
 }

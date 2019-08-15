@@ -14,5 +14,21 @@ namespace Economizar.Models
         [Required(ErrorMessage = "O campo {0} precisa ser preenchido")]
         [DataType(DataType.Text)]
         public string Nome { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
+        public virtual Categoria Categoria { get; set; }
+
+        public Produto()
+        {
+
+        }
+
+        public Produto(int produtoId, string nome, Usuario usuario, Categoria categoria)
+        {
+            ProdutoId = produtoId;
+            Nome = nome;
+            Usuario = usuario;
+            Categoria = categoria;
+        }
     }
 }

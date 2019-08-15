@@ -44,6 +44,9 @@ namespace Economizar.Models
         [Display(Name = "Confirmar Senha")]
         public string ConfirmarSenha { get; set; }
 
+        public int ProdutoId { get; set; }
+        public virtual ICollection<Produto> Produtos { get; set; }
+
         public Usuario()
         {
 
