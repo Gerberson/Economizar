@@ -23,11 +23,20 @@ namespace Economizar.Models
 
         }
 
-        public Categoria(int categoriaId, string nome, int produtoId)
+        public Categoria(int categoriaId, string nome)
         {
             CategoriaId = categoriaId;
             Nome = nome;
-            ProdutoId = produtoId;
+        }
+
+        public void AddProduto(Produto produto)
+        {
+            Produtos.Add(produto);
+        }
+
+        public void RemoveProduto(Produto produto)
+        {
+            Produtos.Remove(produto);
         }
     }
 }

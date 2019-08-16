@@ -44,8 +44,8 @@ namespace Economizar.Models
         [Display(Name = "Confirmar Senha")]
         public string ConfirmarSenha { get; set; }
 
-        public int ProdutoId { get; set; }
-        public virtual ICollection<Produto> Produtos { get; set; }
+        public int ItemId { get; set; }
+        public virtual ICollection<Item> Itens { get; set; } = new List<Item>();
 
         public Usuario()
         {
@@ -62,6 +62,16 @@ namespace Economizar.Models
             Email = email;
             Senha = senha;
             ConfirmarSenha = confirmarSenha;
+        }
+
+        public void AddItem(Item item)
+        {
+            Itens.Add(item);
+        }
+
+        public void RemoveItem(Item item)
+        {
+            Itens.Remove(item);
         }
     }
 }

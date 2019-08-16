@@ -15,20 +15,30 @@ namespace Economizar.Models
         [DataType(DataType.Text)]
         public string Nome { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
         public virtual Categoria Categoria { get; set; }
+        public int ItemId { get; set; }
+        public virtual ICollection<Item> Itens { get; set; } = new List<Item>();
 
         public Produto()
         {
 
         }
 
-        public Produto(int produtoId, string nome, Usuario usuario, Categoria categoria)
+        public Produto(int produtoId, string nome, Categoria categoria)
         {
             ProdutoId = produtoId;
             Nome = nome;
-            Usuario = usuario;
             Categoria = categoria;
+        }
+
+        public void AddItem(Item item)
+        {
+            Itens.Add(item);
+        }
+
+        public void RemoveItem(Item item)
+        {
+            Itens.Remove(item);
         }
     }
 }

@@ -8,6 +8,9 @@ namespace Economizar.Models
 {
     public class Item
     {
+        [Key]
+        public int ItemId { get; set; }
+
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:N}")]
         public int Quantidade { get; set; }
@@ -21,7 +24,23 @@ namespace Economizar.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataCompra { get { return DateTime.Now; } }
 
-        public virtual Produto Produto { get; set; }
+        public virtual Usuario Usuario{ get; set; }
+        public virtual Produto Produto{ get; set; }
         public virtual Supermercado Supermercado { get; set; }
+
+        public Item()
+        {
+
+        }
+
+        public Item(int itemId, int quantidade, double preco, Usuario usuario, Produto produto, Supermercado supermercado)
+        {
+            ItemId = itemId;
+            Quantidade = quantidade;
+            Preco = preco;
+            Usuario = usuario;
+            Produto = produto;
+            Supermercado = supermercado;
+        }
     }
 }

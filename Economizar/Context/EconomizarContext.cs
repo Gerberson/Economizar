@@ -20,5 +20,11 @@ namespace Economizar.Models
         }
 
         public System.Data.Entity.DbSet<Economizar.Models.Usuario> Usuarios { get; set; }
+
+        public System.Data.Entity.DbSet<Economizar.Models.Produto> Produtoes { get; set; }
+
+        public System.Data.Entity.DbSet<Economizar.Models.Categoria> Categorias { get; set; }
+
+        public System.Data.Entity.DbSet<Economizar.Models.Supermercado> Supermercadoes { get; set; }
     }
 }
