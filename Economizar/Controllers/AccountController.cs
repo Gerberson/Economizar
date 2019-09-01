@@ -28,6 +28,11 @@ namespace Economizar.Controllers
             SignInManager = signInManager;
         }
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ApplicationSignInManager SignInManager
         {
             get
@@ -79,7 +84,7 @@ namespace Economizar.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToLocal("Index/Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -151,7 +156,13 @@ namespace Economizar.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser {
+                    UserName = model.Email,
+                    Nome = model.Nome,
+                    Sobrenome = model.Sobrenome,
+                    Sexo = model.Sexo,
+                    Email = model.Email
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -203,18 +214,18 @@ namespace Economizar.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                if (user == null)
                 {
-                    // Não revelar que o usuário não existe ou não está confirmado
+                    ModelState.AddModelError("", "O E-mail está inválido!");
                     return View("ForgotPasswordConfirmation");
                 }
 
-                // Para obter mais informações sobre como habilitar a confirmação da conta e redefinição de senha, visite https://go.microsoft.com/fwlink/?LinkID=320771
+                //Para obter mais informações sobre como habilitar a confirmação da conta e redefinição de senha, visite https://go.microsoft.com/fwlink/?LinkID=320771
                 // Enviar um email com este link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Redefinir senha", "Redefina sua senha, clicando <a href=\"" + callbackUrl + "\">aqui</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string codee = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = codee }, protocol: Request.Url.Scheme);
+                await UserManager.SendEmailAsync(user.Id, "Redefinir senha", "Redefina sua senha, clicando <a href=\"" + callbackUrl + "\">aqui</a>");
+                return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // Se chegamos até aqui e houver alguma falha, exiba novamente o formulário

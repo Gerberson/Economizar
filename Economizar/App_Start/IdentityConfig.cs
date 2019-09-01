@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Economizar.Models;
+using System.Net.Mail;
 
 namespace Economizar
 {
@@ -27,8 +28,29 @@ namespace Economizar
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Conecte seu serviço de SMS aqui para enviar uma mensagem de texto.
-            return Task.FromResult(0);
+            var envia = "senhasgerenciamento@hotmail.com";
+            var user = "senhasgerenciamento@hotmail.com";
+            var pass = "Gerenci@rSenhas123";
+
+            System.Net.NetworkCredential credencial = new System.Net.NetworkCredential(user, pass);
+            SmtpClient cliente = new SmtpClient()
+            {
+                Host = "smtp.live.com",
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Port = 25,
+                EnableSsl = true,
+                Credentials = credencial
+            };
+
+            var mail = new MailMessage(envia, message.Destination)
+            {
+                Subject = message.Subject,
+                Body = message.Body,
+                IsBodyHtml = true
+            };
+
+            return cliente.SendMailAsync(mail);
         }
     }
 

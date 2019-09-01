@@ -14,17 +14,15 @@ namespace Economizar.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
+
         public EconomizarContext() : base("name=EconomizarContext")
         {
         }
 
-        public System.Data.Entity.DbSet<Economizar.Models.Usuario> Usuarios { get; set; }
-
-        public System.Data.Entity.DbSet<Economizar.Models.Produto> Produtoes { get; set; }
-
-        public System.Data.Entity.DbSet<Economizar.Models.Categoria> Categorias { get; set; }
-
         public System.Data.Entity.DbSet<Economizar.Models.Supermercado> Supermercadoes { get; set; }
+
+        public System.Data.Entity.DbSet<Economizar.Models.Item> Items { get; set; }
+
+        public System.Data.Entity.DbSet<Economizar.Models.Compra> Compras { get; set; }
     }
 }

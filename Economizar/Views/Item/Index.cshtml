@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Economizar.Models.Item>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista de Produtos</h2>
+
+<p>
+    @Html.ActionLink("Novo", "Create", "Item", new { @class = "btn btn-success" })
+    @Html.ActionLink("Salvar", "Salvar", "Item", new { @class = "btn btn-primary" })
+</p>
+
+<table class="table">
+
+    <tr class="bg-success">
+        <th>
+            @Html.DisplayNameFor(model => model.Produto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorMin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorMax)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubTotal)
+            </td>
+            <td class="text-success ">
+                @Html.DisplayFor(modelItem => item.ValorMin)
+            </td>
+            <td class="text-danger">
+                @Html.DisplayFor(modelItem => item.ValorMax)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ItemId }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.ItemId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+<h4>@ViewBag.Erro</h4>
+<h3>Total : @Model.Sum(s => s.SubTotal)</h3>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+

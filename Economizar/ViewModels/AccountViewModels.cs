@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Economizar.Models.Enums;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Economizar.Models
@@ -64,6 +66,17 @@ namespace Economizar.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Usuario")]
+        [Required(ErrorMessage = "O campo {0} precisa ser preenchido")]
+        [DataType(DataType.Text)]
+        public string Nome { get; set; }
+
+        [Required(ErrorMessage = "O campo {0} precisa ser preenchido")]
+        [DataType(DataType.Text)]
+        public string Sobrenome { get; set; }
+
+        public Sexo Sexo { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

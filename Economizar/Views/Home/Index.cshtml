@@ -1,31 +1,241 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿<main id="main">
+    <!--==========================
+      Intro Section
+    ============================-->
+    <section id="intro">
+        <div class="intro-container">
+            <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active">
+                        <div class="carousel-background"><img src="~/img/intro-carousel/6.jpeg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Faça uma lista de compras</h2>
+                                <p>Elabore uma lista prévia do que você realmente precisa e, mais importante, siga-a com disciplina. Planejamento evita desperdícios, como comprar produtos repetido, por impulso ou em quantidade maior do que o necessário..</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="~/img/intro-carousel/7.jpeg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Pesquise os preços, escolha o melhor lugar</h2>
+                                <p>Faça uma pesquisa de preços antes de decidir onde vai fazer as compras. Considere também comprar em atacadões, que prestam um serviço mais simples e, em contrapartida, tendem a oferecer preços finais menores para o consumidor. Se a família for grande, talvez compense comprar nos atacados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="~/img/intro-carousel/8.jpeg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Prefira comprar na segunda quinzena do mês</h2>
+                                <p>A maioria dos consumidores compra no início do mês. Na segunda quinzena há uma queda normal de vendas, e as empresas ficam mais propícias a fazer promoções para melhorar o fluxo de caixa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="~/img/intro-carousel/9.jpeg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Preços menores, só que não</h2>
+                                <p>Cuidado com os preços "quebrados", geralmente terminados em 9. Eles tentam confundir o consumidor e dar a falsa impressão de que são menores do que realmente são.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img src="~/img/intro-carousel/10.jpg" alt=""></div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>Confira os preços ao passar pelo caixa</h2>
+                                <p>É mais comum do que se imagina: o valor que estava marcado na prateleira vira outro quando se chega ao caixa. Além de conferir a etiqueta, confira pesos nas balanças e os preços ao passar a compra no caixa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section><!-- #intro -->
+   
+    <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Sobre</h3>
+                <p>
+                    Este site foi criado com a intenção de ajudar as pessoas perceberem o quanto podem economizar em suas compras. Portanto, criei este site onde você pode salvar suas compras e posteriormente ao realizar a compra do mesmo item novamente, você será informado do menor e o maior preço que já pagou neste produto. Com isso você saberá no exato momento da compra se esta compensado levar este produto. Você decide o momento certo de realizar suas compras, garantido a economia no seu bolso. Faça seu registro e aproveite deste recurso.
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                </p>
+            </header>
+
+            @*<div class="row about-cols">
+
+                <div class="col-md-4 wow fadeInUp">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/1.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">1° PASSO</a></h2>
+                        <p>
+                            Faça seu registro é fácil, rápido e totalmente gratuito.
+                            Salve suas compras e acesse quando quiser, você no controle de tudo.
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/2.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">2° PASSO</a></h2>
+                        <p>
+                            Vá em menu, lista e crie sua lista de compras.
+                            Aqui sua lista sera montada no mento em que você estiver comprando.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/3.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">3° PASSO</a></h2>
+                        <p>
+                            Em menu, compras. Você verá suas compras salvas com seus respectivos preços.
+                            Quando você gerar uma nova lista e tiver o mesmo produto em sua lista de compras,
+                            o sistema ira te informar o menos e maior preço que você ja pagou por aquele produto.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/3.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-checkmark"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">3° PASSO</a></h2>
+                        <p>
+                            Em menu, compras. Você verá suas compras salvas com seus respectivos preços.
+                            Quando você gerar uma nova lista e tiver o mesmo produto em sua lista de compras,
+                            o sistema ira te informar o menos e maior preço que você ja pagou por aquele produto.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/3.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-alert"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">3° PASSO</a></h2>
+                        <p>
+                            Em menu, compras. Você verá suas compras salvas com seus respectivos preços.
+                            Quando você gerar uma nova lista e tiver o mesmo produto em sua lista de compras,
+                            o sistema ira te informar o menos e maior preço que você ja pagou por aquele produto.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="about-col">
+                        <div class="img">
+                            <img src="~/img/3.jpg" alt="" class="img-fluid">
+                            <div class="icon"><i class="ion-compose"></i></div>
+                        </div>
+                        <h2 class="title"><a href="#">3° PASSO</a></h2>
+                        <p>
+                            Em menu, compras. Você verá suas compras salvas com seus respectivos preços.
+                            Quando você gerar uma nova lista e tiver o mesmo produto em sua lista de compras,
+                            o sistema ira te informar o menos e maior preço que você ja pagou por aquele produto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
+    </section><!-- #about -->
+    
+    
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+
+            <div class="section-header">
+                <h3>Contato</h3>
+                <p>Trabalhamos com desenvolvimento de sites e sistemas, faça seu orçamento, estamos a disposição.</p>
+            </div>
+
+            <div class="row contact-info">
+
+                <div class="col-md-4">
+                    <div class="contact-address">
+                        <i class="ion-ios-location-outline"></i>
+                        <h3>Cidade</h3>
+                        <address>Jacareí, SP</address>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-phone">
+                        <i class="ion-ios-telephone-outline"></i>
+                        <h3>Phone Number</h3>
+                        <p><a href="tel:+12982281741">(12) 98228-1741</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contact-email">
+                        <i class="ion-ios-email-outline"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:gerbersonscdias@gmail.com">gerbersonscdias@gmail.com</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section><!-- #contact -->
+
+</main>
+
+@{
+    Layout = "~/Views/Shared/_MeuLayout.cshtml";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
